@@ -1,5 +1,5 @@
-Template.addProposal.events({
-	'submit .add-proposal': function(event) {
+Template.newProposal.events({
+	'submit .new-proposal': function(event) {
 		event.preventDefault();
 		var form = event.target;
 		var formData = {

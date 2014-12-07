@@ -1,0 +1,20 @@
+<template name="addProposal">
+	{{#if currentUser }}
+	<form class="add-proposal">
+		<h3>Your new proposal</h3>
+		<input type="radio" name="type" value="buy" checked>Buy<br/>
+		<input type="radio" name="type" value="sell">Sell<br/>
+		<br/>
+		<span>Your rate:</span><br/>
+		<input type="text" name="rate"><br/>
+		<br/>
+		<span>Your value:</span><br/>
+		<input type="text" name="amount"><br/>
+		<br/>
+		<span>Your phone:</span><br/>
+		<input type="text" name="phone"><br/>
+		<br/>
+		<button type="submit">Add</button>
+	</form>
+	{{/if}}
+</template>

@@ -1,0 +1,20 @@
+<template name="proposal">
+	<li class="proposal">
+		<span class="line {{#if checked}}checked{{/if}}">
+			{{type}} | {{rate}} | {{amount}} | {{phone}} | >> {{username}}
+		</span>
+		<span>
+			<button class="check-proposal">Check</button>
+			<button class="delete-proposal">Delete</button>
+			{{#if isOwner}}
+				<button class="mark-private">
+					{{#if private}}
+					Make public
+					{{else}}
+					Make private
+					{{/if}}
+				</button>
+			{{/if}}
+		</span>
+	</li>
+</template>

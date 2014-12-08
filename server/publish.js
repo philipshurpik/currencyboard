@@ -1,5 +1,5 @@
-Meteor.publish("Proposals", function() {
-	return Proposals.find({
+Meteor.publish("Orders", function() {
+	return Orders.find({
 		$or: [
 			{ private: { $ne: true } },
 			{ owner: this.userId }

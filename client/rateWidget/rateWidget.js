@@ -4,8 +4,8 @@ Template.rateWidget.helpers({
 });
 
 function findBestRates() {
-	var buy = Proposals.findOne({type:"buy", checked: {$ne: true}}, {sort: {rate: -1 }}) || {};
-	var sell = Proposals.findOne({type:"sell", checked: {$ne: true}}, {sort: {rate: 1 }}) || {};
+	var buy = Orders.findOne({type:"buy", checked: {$ne: true}}, {sort: {rate: -1 }}) || {};
+	var sell = Orders.findOne({type:"sell", checked: {$ne: true}}, {sort: {rate: 1 }}) || {};
 	var result = {
 		bestBuy: buy.rate || "-",
 		bestSell: sell.rate || "-"

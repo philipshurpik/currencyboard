@@ -1,18 +1,18 @@
-Template.proposals.helpers({
+Template.orders.helpers({
 	hideCompleted: function() {
 		return Session.get('hideCompleted');
 	},
 	activeCount: function() {
-		return Proposals.find({checked: {$ne: true}}).count();
+		return Orders.find({checked: {$ne: true}}).count();
 	},
-	proposals: function() {
+	orders: function() {
 		var hideCompleted = Session.get('hideCompleted');
 		return hideCompleted ?
-			Proposals.find({checked: false}, {sort: {amount: -1, rate: -1}}) :
-			Proposals.find({}, {sort: {amount: -1, rate: -1}});
+			Orders.find({checked: false}, {sort: {amount: -1, rate: -1}}) :
+			Orders.find({}, {sort: {amount: -1, rate: -1}});
 	},
 });
-Template.proposals.events({
+Template.orders.events({
 	'change .hide-completed input': function(event) {
 		Session.set('hideCompleted', event.target.checked);
 	}

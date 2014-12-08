@@ -1,5 +1,5 @@
-Template.newProposal.events({
-	'submit .new-proposal': function(event) {
+Template.newOrder.events({
+	'submit .new-order': function(event) {
 		event.preventDefault();
 		var form = event.target;
 		var formData = {
@@ -8,7 +8,7 @@ Template.newProposal.events({
 			amount: form.amount.value,
 			phone: form.phone.value
 		};
-		Meteor.call('addProposal', formData);
+		Meteor.call('addOrder', formData);
 		form.amount.value = form.rate.value = form.phone.value = "";
 		return false;
 	}

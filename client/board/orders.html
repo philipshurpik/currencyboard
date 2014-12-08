@@ -1,0 +1,15 @@
+<template name="orders">
+	<label class="hide-completed">
+		<input type="checkbox" checked="{{hideCompleted}}"/>
+		Hide completed
+	</label>
+	<br/>
+	<br/>
+	<label>Active orders: {{activeCount}}</label>
+	<ul class="orders">
+		You can place your orders here:
+		{{#each orders}}
+			{{> order}}
+		{{/each}}
+	</ul>
+</template>

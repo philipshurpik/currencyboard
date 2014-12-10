@@ -1,0 +1,14 @@
+<template name="main">
+	<div class="main">
+		<div id="menu">
+			{{> loginButtons}}
+		</div>
+		<div id="header">
+			{{> header}}
+		</div>
+		<div id="content">
+			{{> yield}}
+		</div>
+		<div class="content-overlay"></div>
+	</div>
+</template>

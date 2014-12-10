@@ -1,4 +1,4 @@
-Template.newOrder.events({
+Template.newOrderPage.events({
 	'submit .new-order': function(event) {
 		event.preventDefault();
 		var form = event.target;
@@ -10,6 +10,7 @@ Template.newOrder.events({
 		};
 		Meteor.call('addOrder', formData);
 		form.amount.value = form.rate.value = form.phone.value = "";
+		Router.go('board');
 		return false;
 	}
 })

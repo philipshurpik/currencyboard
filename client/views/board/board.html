@@ -1,0 +1,11 @@
+<template name="board">
+	<div class="board">
+		{{> rateWidget}}
+		{{> orders}}
+		{{#if currentUser }}
+		<span>
+			<a href="{{pathFor 'newOrderPage'}}" class="my-btn">Create new order</a>
+		</span>
+		{{/if}}
+	</div>
+</template>

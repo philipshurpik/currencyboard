@@ -1,5 +1,8 @@
-<template name="order">
-	<li class="order">
+<template name="orderPage">
+	<div class="order-page">
+		<span>
+			<a href="{{pathFor 'board'}}" class="my-btn">Back to board</a>
+		</span>
 		<span class="line {{#if checked}}checked{{/if}}">
 			{{type}} | {{rate}} | {{amount}} | {{phone}} | >> {{username}}
 		</span>
@@ -16,5 +19,5 @@
 				</button>
 			{{/if}}
 		</span>
-	</li>
+	</div>
 </template>

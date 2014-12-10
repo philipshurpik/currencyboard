@@ -1,0 +1,10 @@
+<template name="order">
+	<li class="order">
+		<span class="line {{#if checked}}checked{{/if}}">
+			{{type}} | {{rate}} | {{amount}} | {{phone}} | >> {{username}}
+		</span>
+		<span>
+			<a href="{{pathFor 'orderPage'}}" class="my-btn">View</a>
+		</span>
+	</li>
+</template>

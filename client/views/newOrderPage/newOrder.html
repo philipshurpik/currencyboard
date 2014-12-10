@@ -1,5 +1,7 @@
-<template name="newOrder">
-	{{#if currentUser }}
+<template name="newOrderPage">
+	<span>
+		<a href="{{pathFor 'board'}}" class="my-btn">Back to board</a>
+	</span>
 	<form class="new-order">
 		<h3>Your new order</h3>
 		<input type="radio" name="type" value="buy" checked>Buy<br/>
@@ -16,5 +18,4 @@
 		<br/>
 		<button type="submit">Add</button>
 	</form>
-	{{/if}}
 </template>

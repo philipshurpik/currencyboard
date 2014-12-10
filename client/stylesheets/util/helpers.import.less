@@ -1,3 +1,10 @@
+@color-green: #43a16f;
+@color-white: #ffffff;
+@color-light-grey: #cccccc;
+@color-grey: #999999;
+@color-dark-grey: #555555;
+
+// Position
 .position(@type; @top: auto; @right: auto; @bottom: auto; @left: auto; @width: auto; @height: auto) {
   position: @type;
   top: @top;
@@ -6,4 +13,25 @@
   left: @left;
   width: @width;
   height: @height;
+}
+// Caps styling used in headers
+.title-caps() {
+	letter-spacing: .3em;
+	text-indent: .3em;
+	text-transform: uppercase;
+}
+
+// Adds an ellipses at the end of overflowing strings
+.ellipsized() {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.force-wrap {
+	word-wrap: break-word;
+	word-break: break-all;
+	-ms-word-break: break-all;
+	word-break: break-word; // Non-standard for webkit
+	.hyphens(auto);
 }

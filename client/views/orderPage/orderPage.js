@@ -1,3 +1,6 @@
+Template.orderPage.rendered = function() {
+    Session.set('headerState', { text: "Order", backPage: "board" });
+};
 Template.orderPage.events({
 	'click .check-order': function() {
 		Meteor.call('checkOrder', this._id, !this.checked);

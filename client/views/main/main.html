@@ -1,0 +1,22 @@
+<template name="main">
+	<div id="container" class="{{menuOpen}} {{cordova}}">
+		<div id="menu">
+
+		</div>
+        <header class="bar bar-nav">
+            {{#if headerState.backPage}}
+            <a href="{{pathFor route=headerState.backPage}}" class="btn btn-link btn-nav pull-left">
+                <span class="icon icon-left-nav"></span>Back
+            </a>
+            {{/if}}
+            <button class="btn btn-link btn-nav pull-right btn-menu">
+                <span class="icon icon-bars"></span>
+            </button>
+            <h1 class="title">{{headerState.text}}</h1>
+        </header>
+		<div class="content-overlay"></div>
+		<div id="content">
+			{{> yield}}
+		</div>
+	</div>
+</template>

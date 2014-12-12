@@ -49,6 +49,7 @@ mrt:ionicons@1.4.1
 npm-bcrypt@0.7.7
 observe-sequence@1.0.3
 ordered-dict@1.0.1
+pcjpcj2:ratchet@2.0.2
 random@1.0.1
 reactive-dict@1.0.4
 reactive-var@1.0.3

@@ -5,6 +5,23 @@ var header = {
 };
 Session.setDefault('headerState', header);
 
+Template.main.rendered = function() {
+    this.find('#content')._uihooks = {
+        insertElement: function(node) {
+            var nodeEl = $(node).hasClass('page-base') ? $(node).prependTo('#content') : $(node).appendTo('#content')
+            setTimeout(function() {
+                nodeEl.addClass('page-current');
+            }, 10);
+        },
+        removeElement: function(node) {
+            $(node).removeClass('page-current');
+            setTimeout(function() {
+                $(node).remove();
+            }, 600);
+        }
+    };
+};
+
 Template.main.helpers({
     menuOpen: function() {
         return Session.get('menuOpen') && 'menu-open';

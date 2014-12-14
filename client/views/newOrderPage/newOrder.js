@@ -11,6 +11,7 @@ Template.newOrderPage.events({
 			amount: form.amount.value,
 			phone: form.phone.value
 		};
+        //Meteor.call('addOrder', {type:'buy', rate: 18.15, amount: 1000, phone: +380636067857});
 		Meteor.call('addOrder', formData);
 		form.amount.value = form.rate.value = form.phone.value = "";
 		Router.go('board');

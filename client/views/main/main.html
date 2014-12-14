@@ -1,5 +1,6 @@
 <template name="main">
-	<div id="app" class="{{cordova}}">
+	<div id="app" class="{{cordova}} {{platform}}">
+        <div class="status-bar"></div>
         <header class="bar bar-nav">
             {{#if headerState.backPage}}
             <a href="{{pathFor route=headerState.backPage}}" class="btn btn-link btn-nav pull-left">
@@ -25,7 +26,7 @@
                 <span class="icon icon-home"></span>
                 <span class="tab-label">Board</span>
             </a>
-            <a class="tab-item {{activePageStatistics}}" href="#">
+            <a class="tab-item {{activePageStatistics}}" href="{{pathFor 'statisticsPage'}}">
                 <span class="icon icon-star-filled"></span>
                 <span class="tab-label">Statistics</span>
             </a>

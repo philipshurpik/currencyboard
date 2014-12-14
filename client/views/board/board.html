@@ -1,6 +1,16 @@
 <template name="board">
 	<div class="page page-base board">
-		{{> rateWidget}}
-		{{> orders}}
+        <nav class="bar bar-standard bar-filters">
+            <div class="segmented-control filter-type">
+                <a class="control-item active">Buy</a>
+                <a class="control-item">Sell</a>
+            </div>
+            <div class="segmented-control filter-currency">
+                <a class="control-item active">USD</a>
+                <a class="control-item">EUR</a>
+                <a class="control-item">ALL</a>
+            </div>
+        </nav>
+        {{> orders}}
 	</div>
 </template>

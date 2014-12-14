@@ -1,0 +1,35 @@
+@import '../main/main.less';
+
+.bar {
+  &.bar-filters {
+    padding: 0 3%;
+  }
+  .segmented-control {
+    border: none;
+    top: 8px !important;
+    .control-item.active {
+      background-color: @color-dark-green;
+    }
+    display: inline-block;
+    &.filter-type {
+      width: 40%;
+    }
+    &.filter-currency {
+      width: 56%;
+      margin-left: 2%;
+    }
+  }
+}
+
+
+
+
+
+
+.line {
+	display:inline-block;
+	width:300px;
+}
+.checked {
+	text-decoration: line-through;
+}

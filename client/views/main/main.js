@@ -6,6 +6,14 @@ var header = {
 };
 Session.setDefault('headerState', header);
 
+Meteor.startup(function () {
+    document.addEventListener("deviceready", function() {
+        if (window.device && window.device.platform) {
+            Session.set('platform', window.device.platform.toLowerCase());
+        }
+    });
+});
+
 Template.main.rendered = function() {
     this.find('#content')._uihooks = {
         insertElement: function(node, next) {
@@ -19,27 +27,15 @@ Template.main.rendered = function() {
                 $(this).remove();
             });
         }
-        /*insertElement: function(node) {
-            var nodeEl = $(node).hasClass('page-base') ? $(node).prependTo('#content') : $(node).appendTo('#content')
-            setTimeout(function() {
-                nodeEl.addClass('page-current');
-            }, 10);
-        },
-        removeElement: function(node) {
-            $(node).removeClass('page-current');
-            setTimeout(function() {
-                $(node).remove();
-            }, 600);
-        }*/
     };
 };
 
 Template.main.helpers({
-    menuOpen: function() {
-        return Session.get('menuOpen') && 'menu-open';
-    },
     cordova: function() {
         return Meteor.isCordova && 'cordova';
+    },
+    platform: function() {
+        return Session.get('platform');
     },
     headerState: function() {
         return Session.get('headerState');

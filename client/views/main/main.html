@@ -1,22 +1,53 @@
 <template name="main">
-	<div id="container" class="{{menuOpen}} {{cordova}}">
-		<div id="menu">
-{{>loginButtons}}
-		</div>
+	<div id="app" class="{{cordova}}">
         <header class="bar bar-nav">
             {{#if headerState.backPage}}
             <a href="{{pathFor route=headerState.backPage}}" class="btn btn-link btn-nav pull-left">
                 <span class="icon icon-left-nav"></span>Back
             </a>
             {{/if}}
-            <button class="btn btn-link btn-nav pull-right btn-menu">
+            {{#if headerState.back }}
+            <a href="" class="btn btn-link btn-nav pull-left">
+                <span class="icon icon-left-nav"></span>Back
+            </a>
+            {{/if}}
+            <!--<button class="btn btn-link btn-nav pull-right btn-menu">
                 <span class="icon icon-bars"></span>
-            </button>
+            </button>-->
             <h1 class="title">{{headerState.text}}</h1>
         </header>
-		<div class="content-overlay"></div>
-		<div id="content">
-			{{> yield}}
-		</div>
+        <div class="content-overlay"></div>
+        <div id="content">
+            {{> yield}}
+        </div>
+        <nav class="bar bar-tab">
+            <a class='tab-item {{activePageBoard}}' href="{{pathFor 'board'}}">
+                <span class="icon icon-home"></span>
+                <span class="tab-label">Board</span>
+            </a>
+            <a class="tab-item {{activePageStatistics}}" href="#">
+                <span class="icon icon-star-filled"></span>
+                <span class="tab-label">Statistics</span>
+            </a>
+            {{#if currentUser }}
+                <a class="tab-item {{activePageProfile}}" href="{{pathFor 'profilePage'}}">
+                    <span class="icon icon-person"></span>
+                    <span class="tab-label">Profile</span>
+                </a>
+                <a class="tab-item {{activePageMyOrders}}" href="#">
+                    <span class="icon icon-search"></span>
+                    <span class="tab-label">My orders</span>
+                </a>
+            {{else}}
+                <a class="tab-item {{activePageSignin}}" href="{{pathFor 'signinPage'}}">
+                    <span class="icon icon-person"></span>
+                    <span class="tab-label">Sign in</span>
+                </a>
+            {{/if}}
+            <a class='tab-item {{activePageNewOrder}}' href="{{pathFor 'newOrderPage'}}">
+                <span class="icon icon-plus"></span>
+                <span class="tab-label">New order</span>
+            </a>
+        </nav>
 	</div>
 </template>

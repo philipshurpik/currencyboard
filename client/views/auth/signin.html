@@ -1,0 +1,17 @@
+<template name="signinPage">
+    <div id="signinPage" class="page page-base auth-page">
+        <form class="join">
+            <span>Phone number</span><br/>
+            <input type="tel" name="phone"><br/>
+            <br/>
+            <span>Password</span><br/>
+            <input type="text" name="password"><br/>
+            <br/>
+            <button type="submit">Join</button>
+        </form>
+        <div>
+            Dont'have account?
+            <a href="{{pathFor 'joinPage'}}">Join</a>
+        </div>
+    </div>
+</template>

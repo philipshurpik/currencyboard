@@ -1,19 +1,31 @@
 <template name="newOrderPage">
-	<div id="newOrderPage" class="page new-order-page">
-        <form class="new-order">
-            <input type="radio" name="type" value="buy" checked>Buy<br/>
-            <input type="radio" name="type" value="sell">Sell<br/>
-            <br/>
-            <span>Your rate:</span><br/>
-            <input type="text" name="rate"><br/>
-            <br/>
-            <span>Your value:</span><br/>
-            <input type="text" name="amount"><br/>
-            <br/>
-            <span>Your phone:</span><br/>
-            <input type="text" name="phone"><br/>
-            <br/>
-            <button type="submit">Add</button>
-        </form>
+	<div id="newOrderPage" class="page page-base new-order-page">
+        {{#if currentUser }}
+            <form class="new-order">
+                <input type="radio" name="type" value="buy" checked>Buy<br/>
+                <input type="radio" name="type" value="sell">Sell<br/>
+                <br/>
+                <span>Your rate:</span><br/>
+                <input type="text" name="rate"><br/>
+                <br/>
+                <span>Your value:</span><br/>
+                <input type="text" name="amount"><br/>
+                <br/>
+                <span>Your phone:</span><br/>
+                <input type="text" name="phone"><br/>
+                <br/>
+                <button type="submit">Add</button>
+            </form>
+        {{else}}
+            <div>
+                You should login or register to be able to create new orders
+            </div>
+            <div>
+                <a href="{{pathFor 'signinPage'}}">Sign in</a>
+            </div>
+            <div>
+                <a href="{{pathFor 'joinPage'}}">Join</a>
+            </div>
+        {{/if}}
 	</div>
 </template>

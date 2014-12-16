@@ -1,0 +1,66 @@
+@import '../views/main/main.less';
+
+.form-inset {
+    margin: 15px 25px;
+    border-radius: 7px;
+    .btn-block {
+      margin-bottom: 0px;
+      padding: 12px 0px;
+    }
+}
+.segmented-control {
+  .control-item.active {
+    background-color: @color-dark-green;
+  }
+}
+.segmented-row {
+  height: 42px;
+  &.last {
+    height: 36px;
+  }
+  .segmented-control {
+    font-size: 14px;
+  }
+  .control-item {
+    padding: 7px 0;
+  }
+}
+.input-row {
+  height: 44px;
+  border-bottom: none;
+  background-position: 0px 100%;
+  label {
+    padding: 13px 0;
+    color: @color-dark-green;
+  }
+  .toggle {
+    margin-right: 0px;
+    margin-left: auto;
+  }
+  input {
+    height: 43px;
+    padding-top: 2px;
+  }
+  textarea {
+    float: right;
+    width: 65%;
+    padding-left: 0px;
+    padding-top: 12px;
+    margin: 0px;
+    border: 0px;
+    resize: none;
+  }
+  .toggle {
+    margin-top: 6px;
+    &.active {
+      box-shadow: inset 0 0 0 13px @color-green;
+    }
+  }
+  &.comment {
+    height: 70px;
+    margin-bottom: 10px;
+  }
+}
+.btn-positive {
+  background-color: #7bc5aa;
+}

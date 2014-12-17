@@ -4,17 +4,14 @@
         <header class="bar bar-nav">
             {{#if headerState.backPage}}
             <a href="{{pathFor route=headerState.backPage}}" class="btn btn-link btn-nav pull-left">
-                <span class="icon icon-left-nav"></span>{{_ "main.back"}}
+                <span class="icon icon-left-nav"></span>{{_ "mainBack"}}
             </a>
             {{/if}}
             {{#if headerState.back }}
             <a href="" class="btn btn-link btn-nav pull-left">
-                <span class="icon icon-left-nav"></span>{{_ "main.back"}}
+                <span class="icon icon-left-nav"></span>{{_ "mainBack"}}
             </a>
             {{/if}}
-            <!--<button class="btn btn-link btn-nav pull-right btn-menu">
-                <span class="icon icon-bars"></span>
-            </button>-->
             <h1 class="title">{{headerState.text}}</h1>
         </header>
         <div class="content-overlay"></div>
@@ -24,30 +21,30 @@
         <nav class="bar bar-tab">
             <a class='tab-item {{activePageBoard}}' href="{{pathFor 'board'}}">
                 <span class="icon icon-home"></span>
-                <span class="tab-label">Board</span>
+                <span class="tab-label">{{_ "mainBoard"}}</span>
             </a>
             <a class="tab-item {{activePageStatistics}}" href="{{pathFor 'statisticsPage'}}">
-                <span class="icon icon-star-filled"></span>
-                <span class="tab-label">Statistics</span>
+                <span class="icon"><i class="ion-stats-bars"></i></span>
+                <span class="tab-label">{{_ "mainStatistics"}}</span>
             </a>
             {{#if currentUser }}
                 <a class="tab-item {{activePageProfile}}" href="{{pathFor 'profilePage'}}">
                     <span class="icon icon-person"></span>
-                    <span class="tab-label">Profile</span>
+                    <span class="tab-label">{{_ "mainProfile"}}</span>
                 </a>
                 <a class="tab-item {{activePageMyOrders}}" href="#">
-                    <span class="icon icon-search"></span>
-                    <span class="tab-label">My orders</span>
+                    <span class="icon"><i class="ion-bag"></i></span>
+                    <span class="tab-label">{{_ "mainMyOrders"}}</span>
                 </a>
             {{else}}
                 <a class="tab-item {{activePageSignin}}" href="{{pathFor 'signinPage'}}">
                     <span class="icon icon-person"></span>
-                    <span class="tab-label">Sign in</span>
+                    <span class="tab-label">{{_ "mainSignIn"}}</span>
                 </a>
             {{/if}}
             <a class='tab-item {{activePageNewOrder}}' href="{{pathFor 'newOrderPage'}}">
                 <span class="icon icon-plus"></span>
-                <span class="tab-label">New order</span>
+                <span class="tab-label">{{_ "mainNewOrder"}}</span>
             </a>
         </nav>
 	</div>

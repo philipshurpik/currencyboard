@@ -1,8 +1,8 @@
 Template.signinPage.rendered = function() {
-    Session.set('headerState', { text: "Sign in" });
+    Session.set('headerState', { text: "Вход в программу" });
 };
 Template.signinPage.events({
-    'submit .signin': function(event) {
+    'submit': function(event) {
         event.preventDefault();
         var form = event.target;
         var phone = form.phone.value;

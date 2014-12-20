@@ -1,8 +1,8 @@
 Template.joinPage.rendered = function() {
-    Session.set('headerState', { text: "Join", back: true });
+    Session.set('headerState', { text: "Регистрация", back: true });
 };
 Template.joinPage.events({
-    'submit .join': function(event) {
+    'submit': function(event) {
         event.preventDefault();
         var form = event.target;
         var phone = form.phone.value;

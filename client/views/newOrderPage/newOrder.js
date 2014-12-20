@@ -1,5 +1,5 @@
 Template.newOrderPage.rendered = function() {
-    Session.set('headerState', { text: "Create order" });
+    Session.set('headerState', { text: "Новая заявка" });
 };
 Template.newOrderPage.events({
 	'submit .new-order': function(event) {

@@ -1,16 +1,34 @@
 <template name="joinPage">
     <div id="joinPage" class="page page-base auth-page">
-        <form class="join">
-            <span>Phone number</span><br/>
-            <input type="tel" name="phone"><br/>
-            <br/>
-            <span>Password</span><br/>
-            <input type="text" name="password"><br/>
-            <br/>
-            <span>Repeat password</span><br/>
-            <input type="text" name="confirm"><br/>
-            <br/>
-            <button type="submit">Join</button>
+        <div class="join-info div-inset">
+            <p class="text">Регистрация позволит вам создавать заявки<br/>
+                Ваш номер телефона, город и имя будут указаны в ваших заяках
+            </p>
+        </div>
+        <form class="form-inset">
+            <div class="input-wrapper">
+                <input type="tel" id="phone" name="phone" placeholder="Номер телефона"/>
+                <span class="icon icon-bigger"><i class="ion-ios7-telephone"></i></span>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" id="password" name="password" placeholder="Пароль"/>
+                <span class="icon"><i class="ion-locked"></i></span>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" id="confirm" name="confirm" placeholder="Повторите пароль"/>
+                <span class="icon"><i class="ion-locked"></i></span>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" id="city" name="city" placeholder="Город"/>
+                <span class="icon icon-bigger"><i class="ion-ios7-location"></i></span>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" id="name" name="name" placeholder="Имя"/>
+                <span class="icon"><i class="ion-person"></i></span>
+            </div>
+            <button type="submit" class="btn btn-positive btn-block join">
+                <span class="icon"><i class="ion-paper-airplane"></i></span>Зарегестрироваться
+            </button>
         </form>
     </div>
 </template>

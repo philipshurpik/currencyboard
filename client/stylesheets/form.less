@@ -1,11 +1,23 @@
 @import '../views/main/main.less';
 
+.div-inset {
+  margin: 15px 25px;
+  border-radius: 7px;
+}
+
 .form-inset {
     margin: 15px 25px;
     border-radius: 7px;
     .btn-block {
       margin-bottom: 0px;
+      margin-top: 1.5em;
       padding: 12px 0px;
+      border-radius: 0px;
+      border-color: transparent;
+      .icon {
+        margin-right: 24px;
+        margin-left: -16px;
+      }
     }
 }
 .segmented-control {
@@ -61,10 +73,43 @@
     margin-bottom: 10px;
   }
 }
+.input-wrapper {
+  position: relative;
+
+  select, textarea, input[type="text"], input[type="search"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="tel"], input[type="color"] {
+    padding: 0.75rem 0 0.75rem 3em;
+    font-size: 15px;
+    color: @color-grey;
+    margin-bottom: 1px;
+    border-color: transparent;
+    border-radius: 0px;
+    height: 48px;
+  }
+  .icon {
+    transform: translate3d(0, -40%, 0);
+    background: transparent;
+    color: #aaaaaa;
+    font-size: 1em;
+    height: 1em;
+    position: absolute;
+    top: 45%;
+    width: 1em;
+    padding-left: 1em;
+    i {
+      width: 1em;
+      text-align: center;
+    }
+    &.icon-bigger {
+      i {
+        font-size: 1.1em;
+        padding-right: 0.1em;
+      }
+    }
+  }
+}
 .btn-positive {
   background-color: #7bc5aa;
-  .icon {
-    margin-right: 12px;
-    margin-left: -9px;
-  }
+}
+a {
+  color: @color-dark-green;
 }

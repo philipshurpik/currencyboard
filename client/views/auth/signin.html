@@ -1,17 +1,27 @@
 <template name="signinPage">
     <div id="signinPage" class="page page-base auth-page">
-        <form class="signin">
-            <span>Phone number</span><br/>
-            <input type="tel" name="phone"><br/>
-            <br/>
-            <span>Password</span><br/>
-            <input type="text" name="password"><br/>
-            <br/>
-            <button type="submit">Sign in</button>
+        <div class="div-inset signin-info">
+            <p class="text">Вход в систему позволит вам создавать, просматривать, редактировать и удалять заявки<br/>
+            </p>
+        </div>
+        <form class="form-inset">
+            <div class="input-wrapper">
+                <input type="tel" id="phone" name="phone" placeholder="Номер телефона"/>
+                <span class="icon icon-bigger"><i class="ion-ios7-telephone"></i></span>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" id="password" name="password" placeholder="Пароль"/>
+                <span class="icon"><i class="ion-locked"></i></span>
+            </div>
+            <button type="submit" class="btn btn-positive btn-block signin">
+                <span class="icon"><i class="ion-paper-airplane"></i></span>Войти
+            </button>
         </form>
-        <div>
-            Dont'have account?
-            <a href="{{pathFor 'joinPage'}}">Join</a>
+        <div class="signin-not-registered div-inset">
+            <p class="text">
+                Еще не зарегестрированы? <br/>
+                <a href="{{pathFor 'joinPage'}}">Создать аккаунт</a>
+            </p>
         </div>
     </div>
 </template>

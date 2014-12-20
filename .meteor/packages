@@ -9,6 +9,5 @@ accounts-password
 less
 iron:router
 sacha:spin
-mrt:ionicons
 tap:i18n
-
+mrt:ionicons

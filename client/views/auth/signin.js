@@ -19,5 +19,8 @@ Template.signinPage.events({
             }
             Router.go('board');
         });
+    },
+    'click .go-to-join-page': function() {
+        Router.go('joinPage');
     }
 });

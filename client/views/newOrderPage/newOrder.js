@@ -9,12 +9,18 @@ Template.newOrderPage.events({
 			type: form.type.value,
 			rate: form.rate.value,
 			amount: form.amount.value,
-			phone: form.phone.value
+			city: form.city.value
 		};
         //Meteor.call('addOrder', {type:'buy', rate: 18.15, amount: 1000, phone: +380636067857});
 		Meteor.call('addOrder', formData);
 		form.amount.value = form.rate.value = form.phone.value = "";
 		Router.go('board');
 		return false;
-	}
-})
+	},
+    'click .go-to-signin': function() {
+        Router.go('signinPage');
+    },
+    'click .go-to-join': function() {
+        Router.go('joinPage');
+    }
+});

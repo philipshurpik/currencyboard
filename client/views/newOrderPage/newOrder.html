@@ -1,14 +1,14 @@
 <template name="newOrderPage">
 	<div id="newOrderPage" class="page page-base new-order-page">
         {{#if currentUser }}
-            <form class="form-inset">
+            <form class="form-inset new-order-inset">
                 <div class="segmented-row">
                     <div class="segmented-control filter-type">
-                        <a class="control-item active">Buy</a>
-                        <a class="control-item">Sell</a>
+                        <a class="control-item active">Куплю</a>
+                        <a class="control-item">Продам</a>
                     </div>
                 </div>
-                <div class="segmented-row last">
+                <div class="segmented-row">
                     <div class="segmented-control filter-currency">
                         <a class="control-item active">USD</a>
                         <a class="control-item">EUR</a>
@@ -17,47 +17,52 @@
                         <a class="control-item">CHF</a>
                     </div>
                 </div>
-                <div class="input-row">
-                    <label for="rate">Курс</label>
-                    <input type="number" id="rate" name="rate"/>
+                <div class="input-wrapper">
+                    <input type="number" id="rate" name="rate" placeholder="Курс"/>
+                    <span class="icon"><i class="ion-ios7-calculator"></i></span>
                 </div>
-                <div class="input-row">
-                    <label for="amount">Сумма</label>
-                    <input type="number" id="amount" name="amount"/>
+                <div class="input-wrapper">
+                    <input type="number" id="amount" name="amount" placeholder="Сумма"/>
+                    <span class="icon"><i class="ion-ios7-speedometer"></i></span>
                 </div>
-                <div class="input-row">
-                    <label for="city">Город</label>
-                    <input type="text" id="city" name="city"/>
+                <div class="input-wrapper">
+                    <input type="text" id="city" name="city" placeholder="Город"/>
+                    <span class="icon icon-bigger"><i class="ion-location"></i></span>
                 </div>
-                <div class="input-row">
+                <div class="input-wrapper toggle-wrapper">
+                    <span class="icon"><i class="ion-ios7-navigate"></i></span>
                     <label>Подъеду</label>
                     <div class="toggle">
                         <div class="toggle-handle"></div>
                     </div>
                 </div>
-                <div class="input-row">
+                <div class="input-wrapper toggle-wrapper">
+                    <span class="icon"><i class="ion-ios7-briefcase"></i></span>
                     <label>Банк/ПОВ</label>
                     <div class="toggle">
                         <div class="toggle-handle"></div>
                     </div>
                 </div>
-                <div class="input-row comment">
-                    <label for="comment">Инфо</label>
-                    <textarea id="comment" name="comment"></textarea>
+                <div class="input-wrapper comment-wrapper">
+                    <textarea id="comment" name="comment" placeholder="Комментарий"></textarea>
+                    <span class="icon"><i class="ion-chatbubble"></i></span>
                 </div>
                 <button type="submit" class="btn btn-positive btn-block">
                     <span class="icon"><i class="ion-paper-airplane"></i></span>Создать
                 </button>
             </form>
         {{else}}
-            <div>
-                You should login or register to be able to create new orders
+            <div class="div-inset not-registered-inset">
+                <p class="text">Для создания заявок вам необходимо войти в систему или зарегестрироваться
+                </p>
             </div>
-            <div>
-                <a href="{{pathFor 'signinPage'}}">Sign in</a>
-            </div>
-            <div>
-                <a href="{{pathFor 'joinPage'}}">Join</a>
+            <div class="form-inset not-registered-inset">
+                <button class="btn btn-positive btn-block go-to-signin">
+                    <span class="icon"><i class="ion-paper-airplane"></i></span>Вход
+                </button>
+                <button class="btn btn-positive btn-block go-to-join">
+                    <span class="icon"><i class="ion-paper-airplane"></i></span>Регистрация
+                </button>
             </div>
         {{/if}}
 	</div>

@@ -1,4 +1,3 @@
-// Light
 @font-face {
   font-family: 'Open Sans';
   src: url('font/OpenSans-Light-webfont.eot');
@@ -10,7 +9,6 @@
   font-style: normal;
 }
 
-// Regular
 @font-face {
   font-family: 'Open Sans';
   src: url('font/OpenSans-Regular-webfont.eot');
@@ -23,9 +21,8 @@
   font-style: normal;
 }
 
-// Ratchet
 @font-face {
   font-family: 'Ratchicons';
-  src: url('../../../public/fonts/ratchicons.eot');
-  src: url('../../../public/fonts/ratchicons.eot?#iefix') format('embedded-opentype'), url('../../../public/fonts/ratchicons.woff') format('woff'), url('../../../public/fonts/ratchicons.ttf') format('truetype'), url('../../../public/fonts/ratchicons.svg#svgFontName') format('svg');
+  src: url('ratchicons.eot');
+  src: url('ratchicons.eot?#iefix') format('embedded-opentype'), url('ratchicons.woff') format('woff'), url('ratchicons.ttf') format('truetype'), url('ratchicons.svg#svgFontName') format('svg');
 }

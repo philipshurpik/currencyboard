@@ -1,11 +1,35 @@
 <template name="profilePage">
     <div id="profilePage" class="page page-base profile-page">
-        <div>
-            bla-bla-bla<br/>
-            here you can see your profile
-        </div>
-        <button class="logout">
-            Logout
-        </button>
+        {{#if currentUser }}
+            <form class="form-inset">
+                <div class="input-wrapper">
+                    <input type="tel" id="phone" name="phone" placeholder="Телефон" readonly/>
+                    <span class="icon icon-bigger"><i class="ion-ios7-telephone"></i></span>
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" id="name" name="name" placeholder="Имя"/>
+                    <span class="icon icon-bigger"><i class="ion-person"></i></span>
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" id="city" name="city" placeholder="Город"/>
+                    <span class="icon icon-bigger"><i class="ion-ios7-location"></i></span>
+                </div>
+                <div class="input-wrapper toggle-wrapper">
+                    <span class="icon"><i class="ion-ios7-alarm"></i></span>
+                    <label>Уведомления</label>
+                    <div class="toggle">
+                        <div class="toggle-handle"></div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-positive btn-block">
+                    <span class="icon"><i class="ion-paper-airplane"></i></span>Сохранить
+                </button>
+            </form>
+            <div class="div-inset div-logout">
+                <p class="text-logout">
+                    <a>Выйти из системы</a>
+                </p>
+            </div>
+        {{/if}}
     </div>
 </template>

@@ -3,21 +3,21 @@
         {{#if currentUser }}
             <form class="form-inset">
                 <div class="input-wrapper">
-                    <input type="tel" id="phone" name="phone" placeholder="Телефон" readonly/>
+                    <input type="tel" id="phone" name="phone" placeholder="Телефон" readonly value="{{phone}}"/>
                     <span class="icon icon-bigger"><i class="ion-ios7-telephone"></i></span>
                 </div>
                 <div class="input-wrapper">
-                    <input type="text" id="name" name="name" placeholder="Имя"/>
+                    <input type="text" id="name" name="name" placeholder="Имя" value="{{name}}"/>
                     <span class="icon icon-bigger"><i class="ion-person"></i></span>
                 </div>
                 <div class="input-wrapper">
-                    <input type="text" id="city" name="city" placeholder="Город"/>
+                    <input type="text" id="city" name="city" placeholder="Город" value="{{city}}"/>
                     <span class="icon icon-bigger"><i class="ion-ios7-location"></i></span>
                 </div>
                 <div class="input-wrapper toggle-wrapper">
                     <span class="icon"><i class="ion-ios7-alarm"></i></span>
                     <label>Уведомления</label>
-                    <div class="toggle">
+                    <div class="toggle {{notifications}}">
                         <div class="toggle-handle"></div>
                     </div>
                 </div>

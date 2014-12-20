@@ -4,17 +4,17 @@
             <form class="form-inset new-order-inset">
                 <div class="segmented-row">
                     <div class="segmented-control filter-type">
-                        <a class="control-item active">Куплю</a>
-                        <a class="control-item">Продам</a>
+                        <a class="control-item active" data-id="buy">Куплю</a>
+                        <a id="type-sell" class="control-item" data-id="sell">Продам</a>
                     </div>
                 </div>
                 <div class="segmented-row">
                     <div class="segmented-control filter-currency">
-                        <a class="control-item active">USD</a>
-                        <a class="control-item">EUR</a>
-                        <a class="control-item">RUR</a>
-                        <a class="control-item">GBP</a>
-                        <a class="control-item">CHF</a>
+                        <a class="control-item active" data-id="usd">USD</a>
+                        <a class="control-item" data-id="eur">EUR</a>
+                        <a class="control-item" data-id="rur">RUR</a>
+                        <a class="control-item" data-id="gbp">GBP</a>
+                        <a class="control-item" data-id="chf">CHF</a>
                     </div>
                 </div>
                 <div class="input-wrapper">
@@ -26,7 +26,7 @@
                     <span class="icon"><i class="ion-ios7-speedometer"></i></span>
                 </div>
                 <div class="input-wrapper">
-                    <input type="text" id="city" name="city" placeholder="Город"/>
+                    <input type="text" id="city" name="city" placeholder="Город" value="{{city}}"/>
                     <span class="icon icon-bigger"><i class="ion-location"></i></span>
                 </div>
                 <div class="input-wrapper toggle-wrapper">

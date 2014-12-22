@@ -1,4 +1,4 @@
-Template.orders.helpers({
+/*Template.orders.helpers({
 	hideCompleted: function() {
 		return Session.get('hideCompleted');
 	},
@@ -16,4 +16,4 @@ Template.orders.events({
 	'change .hide-completed input': function(event) {
 		Session.set('hideCompleted', event.target.checked);
 	}
-});
+});*/

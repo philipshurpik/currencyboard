@@ -1,10 +1,16 @@
 <template name="order">
-	<li class="order">
-		<span class="line {{#if checked}}checked{{/if}}">
-			{{type}} | {{rate}} | {{amount}} | {{phone}} | >> {{username}}
-		</span>
-		<span>
-			<a href="{{pathFor 'orderPage'}}" class="my-btn">View</a>
-		</span>
-	</li>
+	<div class="board-order">
+        <a href="{{pathFor 'orderPage'}}" class="order-link">
+            <div class="order-row show-currency">
+                <div class="order-col currency-col">{{currency}}</div>
+                <div class="order-col">{{rate}}</div>
+                <div class="order-col">{{amount}}</div>
+                <div class="order-col">{{name}}</div>
+            </div>
+            <div class="order-row">
+                <div class="order-col city-col">{{city}}</div>
+                <div class="order-col comment-col">{{comment}}</div>
+            </div>
+        </a>
+	</div>
 </template>

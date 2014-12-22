@@ -29,7 +29,7 @@ Template.newOrderPage.events({
 			city: form.city.value,
             phone: Meteor.user().profile.phone,
             name: Meteor.user().profile.name,
-            comment: form.comment.value,
+            comment: form.comment.value
 		};
         Meteor.call('addOrder', formData);
 		form.amount.value = form.rate.value = form.comment.value = "";

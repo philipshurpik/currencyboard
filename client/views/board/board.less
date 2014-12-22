@@ -1,8 +1,11 @@
 @import '../main/main.less';
 
-.bar {
-  &.bar-filters {
-    padding: 0 3%;
+.board {
+  .bar {
+    position: relative;
+    &.bar-filters {
+      padding: 0 3%;
+    }
   }
   .segmented-control {
     border: none;
@@ -17,16 +20,49 @@
     }
   }
 }
-
-
-
-
-
-
-.line {
-	display:inline-block;
-	width:300px;
+.board-status {
+  height: 30px;
+  background-color: @color-light-green;
+  line-height: 30px;
+  padding-left: 10px;
 }
-.checked {
-	text-decoration: line-through;
+.board-order {
+  .order-link {
+    color: inherit;
+  }
+  .order-row {
+    display: flex;
+    height: 25px;
+    &.show-currency {
+      .order-col {
+        width: 25%;
+      }
+      .currency-col {
+        display: inline-block;
+      }
+    }
+  }
+  .order-col {
+    display: inline-block;
+    width: 33.333%;
+    padding: 2px 0px 2px 10px;
+    .box-sizing(border-box);
+    &.currency-col {
+      display: none;
+    }
+    &.city-col {
+      width: 25%;
+      font-size: 15px;
+    }
+    &.comment-col {
+      width: 75%;
+      font-size: 15px;
+    }
+  }
+}
+.board-order:nth-child(odd) {
+  background-color: white;
+}
+.board-order:nth-child(even) {
+  background-color: @color-light-green;
 }

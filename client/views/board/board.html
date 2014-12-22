@@ -11,6 +11,13 @@
                 <a class="control-item">ALL</a>
             </div>
         </nav>
-        {{> orders}}
+        <div class="board-status">
+            <label>Active orders: {{activeCount}}</label>
+        </div>
+        <div class="board-orders">
+            {{#each orders}}
+                {{> order}}
+            {{/each}}
+        </div>
 	</div>
 </template>

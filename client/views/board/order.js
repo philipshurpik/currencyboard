@@ -12,5 +12,28 @@ Template.order.events({
 Template.order.helpers({
 	isOwner: function() {
 		return this.owner === Meteor.userId();
-	}
+	},
+    time: function() {
+        var hour = this.createdAt.getHours().toString();
+        var minute = this.createdAt.getMinutes().toString();
+        return (hour.length === 1 ? "0" + hour : hour) + ":" + (minute.length === 1 ? "0" + minute : minute);
+    },
+    amount: function() {
+        return ("" + this.amount).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, function($1) { return $1 + " "; });
+    },
+    showIconDrive: function() {
+        return !this.isDrive ? "display-none" : "";
+    },
+    showIconBank: function() {
+        return !this.isBank ? "display-none" : "";
+    },
+    showCurrency: function() {
+        return Session.get('activeBoardCurrency') !== "all" ? "display-none" : "";
+    },
+    showCity: function() {
+        return "display-none";
+    },
+    showAdvancedRow: function() {
+        return Session.get('boardShowMore') && 'show-advanced-row';
+    }
 });

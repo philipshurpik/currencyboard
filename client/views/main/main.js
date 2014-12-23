@@ -42,7 +42,13 @@ Template.main.helpers({
     },
     activePageBoard: function() {
         var page = Session.get('activePage');
-        return (page === 'board' || page === 'orderPage') && 'active';
+        var allOrders = Session.get('showAllOrders');
+        return (page === 'board' && allOrders || page === 'orderPage' && allOrders) && 'active';
+    },
+    activePageMyOrders: function() {
+        var page = Session.get('activePage');
+        var allOrders = Session.get('showAllOrders');
+        return (page === 'board' && !allOrders || page === 'orderPage' && !allOrders) && 'active';
     },
     activePageNewOrder: function() {
         return Session.get('activePage') === 'newOrderPage' && 'active';
@@ -65,5 +71,8 @@ Template.main.events({
     },
     'click .btn-menu': function() {
         Session.set('menuOpen', false/*!Session.get('menuOpen')*/);
+    },
+    'click .pull-right .header-icon-settings': function() {
+        Session.set('boardShowMore', !Session.get('boardShowMore'));
     }
 });

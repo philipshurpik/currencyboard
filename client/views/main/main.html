@@ -3,16 +3,21 @@
         <div class="status-bar"></div>
         <header class="bar bar-nav">
             {{#if headerState.backPage}}
-            <a href="{{pathFor route=headerState.backPage}}" class="btn btn-link btn-nav pull-left">
-                <span class="icon icon-left-nav"></span>{{_ "mainBack"}}
-            </a>
+                <a href="{{pathFor route=headerState.backPage}}" class="btn btn-link btn-nav pull-left">
+                    <span class="icon icon-left-nav"></span>{{_ "mainBack"}}
+                </a>
             {{/if}}
             {{#if headerState.back }}
-            <a href="" class="btn btn-link btn-nav pull-left">
-                <span class="icon icon-left-nav"></span>{{_ "mainBack"}}
-            </a>
+                <a href="" class="btn btn-link btn-nav pull-left">
+                    <span class="icon icon-left-nav"></span>{{_ "mainBack"}}
+                </a>
             {{/if}}
             <h1 class="title">{{headerState.text}}</h1>
+            {{#if headerState.settings }}
+                <a href="" class="btn btn-link btn-nav pull-right">
+                    <span class="icon header-icon-settings"><i class="ion-gear-a"></i></span>
+                </a>
+            {{/if}}
         </header>
         <div class="content-overlay"></div>
         <div id="content">
@@ -32,7 +37,7 @@
                     <span class="icon icon-person"></span>
                     <span class="tab-label">{{_ "mainProfile"}}</span>
                 </a>
-                <a class="tab-item {{activePageMyOrders}}" href="#">
+                <a class="tab-item {{activePageMyOrders}}" href="{{pathFor 'board'}}">
                     <span class="icon"><i class="ion-bag"></i></span>
                     <span class="tab-label">{{_ "mainMyOrders"}}</span>
                 </a>

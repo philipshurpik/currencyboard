@@ -2,17 +2,19 @@
 	<div class="page page-base board">
         <nav class="bar bar-standard bar-filters">
             <div class="segmented-control filter-type">
-                <a class="control-item active">Buy</a>
-                <a class="control-item">Sell</a>
+                <a class="control-item {{typeBuyActive}}" data-id="buy">Buy</a>
+                <a class="control-item {{typeSellActive}}" data-id="sell">Sell</a>
             </div>
             <div class="segmented-control filter-currency">
-                <a class="control-item active">USD</a>
-                <a class="control-item">EUR</a>
-                <a class="control-item">ALL</a>
+                <a class="control-item active" data-id="usd">USD</a>
+                <a class="control-item" data-id="eur">EUR</a>
+                <a class="control-item" data-id="all">ALL</a>
             </div>
         </nav>
         <div class="board-status">
-            <label>Active orders: {{activeCount}}</label>
+            <label>Город: </label>
+            <label class="status-city">{{activeCity}}</label>
+            <label>Активно заявок: {{activeCount}}</label>
         </div>
         <div class="board-orders">
             {{#each orders}}

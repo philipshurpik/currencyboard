@@ -1,16 +1,22 @@
 <template name="order">
-	<div class="board-order">
+	<div class="board-order {{showAdvancedRow}}">
         <a href="{{pathFor 'orderPage'}}" class="order-link">
-            <div class="order-row show-currency">
-                <div class="order-col currency-col">{{currency}}</div>
-                <div class="order-col">{{rate}}</div>
-                <div class="order-col">{{amount}}</div>
-                <div class="order-col">{{name}}</div>
-            </div>
             <div class="order-row">
-                <div class="order-col city-col">{{city}}</div>
-                <div class="order-col comment-col">{{comment}}</div>
+                <div class="order-col order-time">{{time}}</div>
+                <div class="order-col order-currency {{showCurrency}}">{{currency}}</div>
+                <div class="order-col order-rate">{{rate}}</div>
+                <div class="order-col order-amount">{{amount}}</div>
+                <div class="order-col order-icons">
+                    <span class="icon {{showIconDrive}}"><i class="ion-ios7-navigate"></i></span>
+                    <span class="icon {{showIconBank}}"><i class="ion-ios7-briefcase"></i></span>
+                </div>
+            </div>
+            <div class="order-row advanced-row">
+                <div class="order-col order-city {{showCity}}">{{city}}</div>
+                <div class="order-col order-name">{{name}}</div>
+                <div class="order-col order-comment">{{comment}}</div>
             </div>
         </a>
+        <span class="icon order-open-icon"><i class="ion-ios7-arrow-right"></i></span>
 	</div>
 </template>

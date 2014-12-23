@@ -21,6 +21,7 @@ Template.newOrderPage.events({
 	'submit': function(event) {
 		event.preventDefault();
         var form = event.target;
+
 		var formData = {
 			type: $('.filter-type').find('.active').data('id'),
             currency: $('.filter-currency').find('.active').data('id'),
@@ -29,7 +30,9 @@ Template.newOrderPage.events({
 			city: form.city.value,
             phone: Meteor.user().profile.phone,
             name: Meteor.user().profile.name,
-            comment: form.comment.value
+            comment: form.comment.value,
+            isDrive: $('.new-order-drive').hasClass('active'),
+            isBank: $('.new-order-bank').hasClass('active')
 		};
         Meteor.call('addOrder', formData);
 		form.amount.value = form.rate.value = form.comment.value = "";

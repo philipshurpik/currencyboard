@@ -38,30 +38,31 @@
   position: relative;
   .order-link {
     display: inherit;
-    width: 96%;
+    width: 95%;
     color: inherit;
   }
   .order-open-icon {
-    width: 4%;
+    width: 7%;
     position: absolute;
-    right: 3px;
-    top: 7px;
+    right: 0;
+    top: 10px;
+    padding-left: 2px;
     color: @color-dark-green;
+    font-size: 18px;
+    .board-order.show-advanced-row & {
+      top: 20px;
+    }
   }
   .order-row {
+    display: -webkit-flex;
     display: flex;
-    height: 35px;
+    height: 40px;
     text-align: center;
-  }
-  .advanced-row {
-    display: none;
-    font-size: 14px;
-    line-height: 14px;
   }
   .order-col {
     display: inline-block;
     width: 33.333%;
-    padding: 7px 0px 2px;// 10px;
+    padding: 9px 0px 2px;// 10px;
     border-left: 1px solid #f1f1f1;
     .box-sizing(border-box);
     &.order-time {
@@ -81,26 +82,32 @@
         line-height: 17px;
       }
     }
-    &.order-city, &.order-name {
-      width: 25%;
-      overflow: hidden;
-      white-space: nowrap;
-      padding-left: 2px;
-      padding-right: 2px;
-    }
+  }
+  .advanced-row {
+    display: none;
+    font-size: 14px;
+    line-height: 14px;
+    height: 25px;
+    border-top: 1px solid #f1f1f1;
+  }
+  .advanced-col {
+    display: inline-block;
+    padding: 4px 10px 0px 15px;
+    max-width: 50%;
+    overflow: hidden;
+    white-space: nowrap;
+    .box-sizing(border-box);
     &.order-comment {
-      width: 75%;
+      max-width: 75%;
     }
   }
   &.show-advanced-row {
     .advanced-row {
+      display: -webkit-flex;
       display: flex;
     }
-    .order-row {
-      height: 25px;
-    }
-    .order-col {
-      padding-top: 2px;
+    .order-open-icon {
+      top: 20px;
     }
   }
 }

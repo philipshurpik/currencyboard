@@ -1,9 +1,5 @@
 Template.board.rendered = function() {
     Session.set('headerState', { text: "Все заявки", settings: true });
-    Session.set('activeBoardType', "buy");
-    Session.set('activeBoardCurrency', "usd");
-    Session.set('boardShowMore', false);
-    Session.set('showAllOrders', true);
 };
 Template.board.helpers({
     activeCity: function() {

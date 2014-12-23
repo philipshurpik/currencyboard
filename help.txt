@@ -1,0 +1,2 @@
+meteor build --debug --directory ../CurrencyBoardBuild --server=https://currencyboard.meteor.com
+meteor deploy currencyboard.meteor.com

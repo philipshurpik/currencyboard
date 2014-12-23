@@ -1,10 +1,9 @@
 Session.setDefault('menuOpen', false);
-var header = {
-    back: false,
-    backPage: "",
-    text: "Board"
-};
-Session.setDefault('headerState', header);
+Session.setDefault('headerState', { back: false, backPage: "", text: "Board" });
+Session.setDefault('activeBoardType', "buy");
+Session.setDefault('activeBoardCurrency', "usd");
+Session.setDefault('boardShowMore', false);
+Session.setDefault('showAllOrders', true);
 
 Meteor.startup(function () {
     document.addEventListener("deviceready", function() {
@@ -72,7 +71,7 @@ Template.main.events({
     'click .btn-menu': function() {
         Session.set('menuOpen', false/*!Session.get('menuOpen')*/);
     },
-    'click .pull-right .header-icon-settings': function() {
+    'click .pull-right': function() {
         Session.set('boardShowMore', !Session.get('boardShowMore'));
     }
 });

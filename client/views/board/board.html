@@ -1,5 +1,5 @@
 <template name="board">
-	<div class="page page-base board">
+	<div class="board">
         <nav class="bar bar-standard bar-filters">
             <div class="segmented-control filter-type">
                 <a class="control-item {{typeBuyActive}}" data-id="buy">Buy</a>
@@ -11,15 +11,18 @@
                 <a class="control-item" data-id="all">ALL</a>
             </div>
         </nav>
-        <div class="board-status">
-            <label>Город: </label>
-            <label class="status-city">{{activeCity}}</label>
-            <label>Активно заявок: {{activeCount}}</label>
-        </div>
-        <div class="board-orders">
-            {{#each orders}}
+        <div class="page page-base">
+            <div class="board-status">
+                {{#if currentUser }}
+                <label>Город: </label><label class="status-city">{{activeCity}}</label>
+                {{/if}}
+                <label>Активно заявок: {{activeCount}}</label>
+            </div>
+            <div class="board-orders">
+                {{#each orders}}
                 {{> order}}
-            {{/each}}
+                {{/each}}
+            </div>
         </div>
 	</div>
 </template>

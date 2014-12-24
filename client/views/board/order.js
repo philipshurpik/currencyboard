@@ -31,7 +31,7 @@ Template.order.helpers({
         return Session.get('activeBoardCurrency') !== "all" ? "display-none" : "";
     },
     showCity: function() {
-        return "display-none";
+        return Meteor.userId() ? "display-none" : "";
     },
     showAdvancedRow: function() {
         return Session.get('boardShowMore') && 'show-advanced-row';

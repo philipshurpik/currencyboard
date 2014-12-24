@@ -17,7 +17,7 @@ Template.board.helpers({
             checked: {$ne: true},
             type: Session.get('activeBoardType'),
             currency: Session.get('activeBoardCurrency') !== "all" ? Session.get('activeBoardCurrency') : {$exists: true}
-        }, {sort: {amount: -1, rate: -1}});
+        }, {sort: {createdAt: -1, amount: -1}});
     },
     activeStatusText: function() {
         return Session.get('activeBoardType') === "buy" ? "на покупку" : "на продажу";

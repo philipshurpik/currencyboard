@@ -39,6 +39,12 @@ Template.newOrderPage.events({
 		Router.go('board');
 		return false;
 	},
+    'click .new-order-drive': function() {
+        unToggleElement($('.new-order-bank'));
+    },
+    'click .new-order-bank': function() {
+        unToggleElement($('.new-order-drive'));
+    },
     'click .go-to-signin': function() {
         Router.go('signinPage');
     },
@@ -50,4 +56,11 @@ Template.newOrderPage.helpers({
     city: function() {
         return Meteor.user().profile.city;
     }
-})
+});
+
+function unToggleElement(toggleEl) {
+    if (toggleEl.hasClass('active')) {
+        toggleEl.removeClass('active');
+        toggleEl.find('.toggle-handle')[0].style.webkitTransform = "translate3d(0px, 0px, 0px)"
+    }
+}

@@ -1,6 +1,9 @@
 @import '../main/main.less';
 
 .board {
+  .page {
+    top: 44px;
+  }
   .bar {
     position: relative;
     &.bar-filters {
@@ -71,12 +74,17 @@
     &.order-currency {
       text-transform: uppercase;
     }
+    &.order-amount {
+      width: 42%;
+    }
     &.order-icons {
-      width: 55px;
+      width: 25px;
+      height: 30px;
       overflow: hidden;
       text-align: left;
       color: @color-green;
       border-left: none;
+      margin-right: 10px;
       .icon {
         font-size: 17px;
         line-height: 17px;

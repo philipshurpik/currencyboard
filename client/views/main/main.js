@@ -16,15 +16,26 @@ Meteor.startup(function () {
 Template.main.rendered = function() {
     this.find('#content')._uihooks = {
         insertElement: function(node, next) {
-            $(node)
-                .hide()
-                .insertBefore(next)
-                .fadeIn(function () {});
+            if ($(node).hasClass('page-animate')) {
+                $(node).insertBefore(next);
+                setTimeout(function() {
+                    $(node).removeClass('page-animate-start');
+                }, 10);
+            }
+            else {
+                $(node).hide().insertBefore(next).fadeIn(function () {});
+            }
         },
         removeElement: function(node) {
-            $(node).fadeOut(function() {
-                $(this).remove();
-            });
+            if ($(node).hasClass('page-animate')) {
+                $(node).css('z-index', 1000).addClass('page-animate-start');
+                setTimeout(function() {
+                    $(node).remove();
+                }, 300);
+            }
+            else {
+                $(node).fadeOut(function() { $(this).remove(); });
+            }
         }
     };
 };

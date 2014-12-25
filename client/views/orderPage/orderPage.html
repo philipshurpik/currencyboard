@@ -1,51 +1,87 @@
 <template name="orderPage">
 	<div id="orderPage" class="page order-page page-animate page-animate-start">
-        <div class="input-wrapper">
-            <input type="number" step="0.01" id="rate" name="rate" placeholder="Курс" value="{{rate}}" readonly />
-            <span class="icon"><i class="ion-ios7-calculator"></i></span>
-        </div>
-        <div class="input-wrapper">
-            <input type="text" step="1" min="0" id="amount" name="amount" pattern="[0-9]*" autocomplete="off" placeholder="Сумма"/>
-            <span class="icon"><i class="ion-ios7-speedometer"></i></span>
-        </div>
-        <div class="input-wrapper">
-            <input type="text" id="city" name="city" placeholder="Город" value="{{city}}"/>
-            <span class="icon icon-bigger"><i class="ion-location"></i></span>
-        </div>
-        <div class="input-wrapper toggle-wrapper">
-            <span class="icon"><i class="ion-ios7-navigate"></i></span>
-            <label>Подъеду</label>
-            <div class="toggle new-order-drive">
-                <div class="toggle-handle"></div>
+        <div class="form-inset div-inset">
+            {{#if isOwner}}
+                <div class="text-label">
+                    <span class="icon icon-bigger"><i class="ion-person"></i></span>
+                    <label class="text-name">Ваша заявка</label>
+                </div>
+            {{else}}
+                <div class="text-label link-label">
+                    <span class="icon icon-bigger"><i class="ion-ios7-telephone"></i></span>
+                    <label class="text-name">{{name}}</label>
+                    <label class="text-value">{{phone}}</label>
+                </div>
+            {{/if}}
+            <div class="text-label">
+                <span class="icon"><i class="ion-ios7-pricetag"></i></span>
+                <label class="text-name">{{type}}</label>
+                <label class="text-value text-currency">{{currency}}</label>
             </div>
-        </div>
-        <div class="input-wrapper toggle-wrapper">
-            <span class="icon"><i class="ion-ios7-briefcase"></i></span>
-            <label>Банк/ПОВ</label>
-            <div class="toggle new-order-bank">
-                <div class="toggle-handle"></div>
+            <div class="text-label">
+                <span class="icon"><i class="ion-ios7-calculator"></i></span>
+                <label class="text-name">Курс</label>
+                <label class="text-value">{{rate}}</label>
             </div>
-        </div>
-        <div class="input-wrapper comment-wrapper">
-            <textarea id="comment" name="comment" placeholder="Комментарий"></textarea>
-            <span class="icon"><i class="ion-chatbubble"></i></span>
+            <div class="text-label">
+                <span class="icon"><i class="ion-ios7-speedometer"></i></span>
+                <label class="text-name">Сумма</label>
+                <label class="text-value">{{amount}}</label>
+            </div>
+            <div class="text-label">
+                <span class="icon icon-bigger"><i class="ion-location"></i></span>
+                <label class="text-name">Город</label>
+                <label class="text-value">{{city}}</label>
+            </div>
+            {{#if showDrive}}
+                <div class="text-label">
+                    <span class="icon"><i class="ion-ios7-navigate"></i></span>
+                    <label class="text-name text-grey">Подъеду</label>
+                </div>
+            {{/if}}
+            {{#if showBank}}
+                <div class="text-label">
+                    <span class="icon"><i class="ion-ios7-briefcase"></i></span>
+                    <label class="text-name text-grey">Банк/ПОВ</label>
+                </div>
+            {{/if}}
+            <div class="input-wrapper comment-wrapper">
+                <textarea id="comment" name="comment" placeholder="Комментарий" readonly>{{comment}}</textarea>
+                <span class="icon"><i class="ion-chatbubble"></i></span>
+            </div>
+            {{#if isOwner}}
+                <div class="button-wrapper">
+                    <button class="btn btn-positive btn-block change">
+                        <span class="icon icon-bigger"><i class="ion-edit"></i></span>Изменить
+                    </button>
+                    <button class="btn btn-positive btn-block make-not-active float-right">
+                        <span class="icon icon-bigger"><i class="ion-trash-b"></i></span>Не активная
+                    </button>
+                </div>
+            {{else}}
+                <div class="button-wrapper">
+                    <button class="btn btn-positive btn-block make-not-active">
+                        <span class="icon icon-bigger"><i class="ion-ios7-telephone"></i></span>Позвонить
+                    </button>
+                    <button class="btn btn-positive btn-block make-not-active float-right">
+                        <span class="icon icon-bigger"><i class="ion-ios7-chatboxes"></i></span>Чат
+                    </button>
+                </div>
+            {{/if}}
         </div>
 
-        <span class="line {{#if checked}}checked{{/if}}">
-			{{type}} | {{rate}} | {{amount}} | {{phone}} | >> {{username}}
-		</span>
-		<span>
-			<button class="check-order">Check</button>
-			<button class="delete-order">Delete</button>
-			{{#if isOwner}}
-				<button class="mark-private">
-					{{#if private}}
-					Make public
-					{{else}}
-					Make private
-					{{/if}}
-				</button>
-			{{/if}}
-		</span>
 	</div>
 </template>
+
+<!--<button class="delete-order">Delete</button>-->
+<!--<button class="mark-private">
+    {{#if private}}
+    Make public
+    {{else}}
+    Make private
+    {{/if}}
+</button>
+<span class="line {{#if checked}}checked{{/if}}">
+                {{type}} | {{rate}} | {{amount}} | {{phone}} | >> {{username}}
+            </span>
+-->

@@ -1,5 +1,5 @@
 Template.orderPage.rendered = function() {
-    Session.set('headerState', { text: "Order", backPage: "board" });
+    Session.set('headerState', { text: "Заявка", backPage: "board" });
 };
 Template.orderPage.events({
 	'click .check-order': function() {
@@ -15,5 +15,17 @@ Template.orderPage.events({
 Template.orderPage.helpers({
 	isOwner: function() {
 		return this.owner === Meteor.userId();
-	}
+	},
+    showDrive: function() {
+        return this.isDrive;
+    },
+    showBank: function() {
+        return this.isBank;
+    },
+    type: function() {
+        return this.type === "sell" ? "Покупка" : "Продажа";
+    },
+    amount: function() {
+        return ("" + this.amount).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, function($1) { return $1 + " "; });
+    }
 });
